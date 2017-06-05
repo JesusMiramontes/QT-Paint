@@ -110,6 +110,14 @@ void drawing::circleBresenham(QPainter *canvas, QPointF *point, int r, int width
     }
 }
 
+void drawing::square(QPainter *canvas, QPointF *p1, QPointF *p2, QPointF *p3, QPointF *p4, int width, QColor color)
+{
+    lineBresenham(canvas,p1,p2,width,color);
+    lineBresenham(canvas,p2,p3,width,color);
+    lineBresenham(canvas,p3,p4,width,color);
+    lineBresenham(canvas,p3,p1,width,color);
+}
+
 void drawing::triangle(QPainter* canvas, QPointF *p1, QPointF *p2, QPointF *p3, int width, QColor color)
 {
     lineBresenham(canvas,p1,p2,width,color);
